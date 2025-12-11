@@ -1,0 +1,51 @@
+/* Ensures page never scrolls */
+body,
+html {
+     margin: 0;
+     padding: 0;
+
+}
+
+.home-container {
+     position: relative;
+     width: 100vw;
+     height: 100vh;
+     /* Full page */
+
+}
+
+/* Full background video stretched perfectly */
+.background-video {
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     width: 100vw;
+     height: 100vh;
+     object-fit: cover;
+     /* Ensures exact fitting */
+     transform: translate(-50%, -50%);
+     z-index: 1;
+}
+
+/* Text overlay */
+.overlay-content {
+     position: absolute;
+     top: 40%;
+     left: 50%;
+     transform: translate(-50%, -40%);
+     z-index: 2;
+     text-align: center;
+     color: rgb(255, 242, 3);
+     font-family: sans-serif;
+}
+
+.overlay-content h1 {
+     font-size: 4rem;
+     margin: 0 0 20px;
+}
+
+.overlay-content p {
+     font-size: 1.8rem;
+     max-width: 700px;
+     margin: 0 auto;
+}

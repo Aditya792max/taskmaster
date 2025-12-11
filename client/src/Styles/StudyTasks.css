@@ -1,0 +1,258 @@
+/* StudyTasks.css - layout with left form and right two-row tasks area */
+
+:root {
+     --bg: #f7f9fb;
+     --card: #ffffff;
+     --muted: #6b7280;
+     --accent: #c4ff3d;
+     --accent-dark: #065f46;
+     --glass-shadow: 0 6px 18px rgba(7, 10, 22, 0.06);
+}
+
+.study-container,
+.study-page {
+     width: 100%;
+     background: var(--bg);
+}
+
+/* main heading */
+.study-main-heading {
+     max-width: 1150px;
+     margin: 18px auto;
+     padding: 0 16px;
+     font-size: 28px;
+     color: #065f46;
+}
+
+/* two-column layout */
+.study-layout {
+     max-width: 1150px;
+     margin: 12px auto 48px;
+     padding: 0 16px;
+     display: grid;
+     grid-template-columns: 360px 1fr;
+     /* left form fixed width, right grows */
+     gap: 20px;
+     align-items: start;
+}
+
+/* left column form card */
+.form-card {
+     background: var(--card);
+     padding: 18px;
+     border-radius: 12px;
+     box-shadow: var(--glass-shadow);
+     min-height: 220px;
+     display: flex;
+     flex-direction: column;
+     gap: 12px;
+}
+
+.form-heading {
+     margin: 0 0 6px 0;
+     font-size: 20px;
+     color: #061014;
+}
+
+/* form elements */
+.task-form label {
+     display: block;
+     margin-bottom: 10px;
+     font-size: 14px;
+     color: #374151;
+}
+
+.task-form label span {
+     display: block;
+     margin-bottom: 6px;
+     font-weight: 600;
+     color: #111827;
+}
+
+.task-form input[type="text"],
+.task-form textarea,
+.task-form select {
+     width: 100%;
+     padding: 10px 12px;
+     border-radius: 8px;
+     border: 1px solid #e6edf3;
+     font-size: 14px;
+     outline: none;
+     transition: box-shadow 120ms ease, border-color 120ms ease;
+     background: #fbfdff;
+}
+
+.task-form textarea {
+     resize: vertical;
+}
+
+.task-form input[type="text"]:focus,
+.task-form textarea:focus,
+.task-form select:focus {
+     box-shadow: 0 6px 16px rgba(6, 17, 27, 0.06);
+     border-color: rgba(6, 17, 27, 0.08);
+}
+
+/* inline controls row */
+.form-row {
+     display: flex;
+     gap: 12px;
+     align-items: center;
+     justify-content: space-between;
+}
+
+.checkbox-label {
+     display: inline-flex;
+     gap: 8px;
+     align-items: center;
+     font-size: 14px;
+}
+
+/* submit */
+.btn-submit {
+     margin-top: 6px;
+     background: #071028;
+     color: white;
+     border: none;
+     padding: 10px 12px;
+     border-radius: 12px;
+     cursor: pointer;
+     font-weight: 600;
+     transition: transform 120ms ease, box-shadow 120ms ease;
+}
+
+.btn-submit:disabled {
+     opacity: 0.6;
+     cursor: not-allowed;
+}
+
+.btn-submit:hover:not(:disabled) {
+     transform: translateY(-2px);
+     box-shadow: 0 10px 20px rgba(7, 10, 22, 0.08);
+}
+
+/* small form error */
+.form-error {
+     color: #991b1b;
+     background: #fff1f2;
+     padding: 8px;
+     border-radius: 8px;
+     font-size: 13px;
+}
+
+/* RIGHT COLUMN - holds two stacked sections */
+.study-right {
+     display: flex;
+     flex-direction: column;
+     gap: 18px;
+}
+
+/* each section */
+.tasks-section {
+     background: var(--card);
+     padding: 16px;
+     border-radius: 12px;
+     box-shadow: var(--glass-shadow);
+}
+
+.section-heading {
+     margin: 0 0 12px 0;
+     font-size: 18px;
+     color: #061014;
+}
+
+/* loading and error */
+.loader,
+.empty,
+.error-box {
+     color: var(--muted);
+     padding: 12px;
+     border-radius: 10px;
+}
+
+/* grid of task cards inside each section */
+.tasks-grid {
+     display: grid;
+     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+     gap: 12px;
+}
+
+/* single task card */
+.task-card {
+     background: linear-gradient(180deg, #fff 0%, #fbfdff 100%);
+     padding: 12px;
+     border-radius: 10px;
+     border: 1px solid rgba(6, 17, 27, 0.04);
+     display: flex;
+     flex-direction: column;
+     gap: 8px;
+}
+
+.task-card.done {
+     opacity: 0.92;
+     filter: saturate(0.95);
+}
+
+/* top row of card */
+.task-top {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     gap: 12px;
+}
+
+.task-title {
+     margin: 0;
+     font-size: 16px;
+     color: #071028;
+}
+
+.priority {
+     font-weight: 700;
+     font-size: 12px;
+     padding: 6px 8px;
+     border-radius: 8px;
+}
+
+/* priority colors */
+.p1 {
+     background: #fee2e2;
+     color: #991b1b;
+}
+
+.p2 {
+     background: #fff7ed;
+     color: #92400e;
+}
+
+.p3 {
+     background: #ecfdf5;
+     color: #065f46;
+}
+
+.task-desc {
+     margin: 0;
+     color: #475569;
+     font-size: 14px;
+     min-height: 36px;
+}
+
+.task-meta {
+     font-size: 12px;
+     color: #9ca3af;
+}
+
+/* responsive: single column on small screens */
+@media (max-width: 880px) {
+     .study-layout {
+          grid-template-columns: 1fr;
+     }
+
+     .form-card {
+          order: 1;
+     }
+
+     .study-right {
+          order: 2;
+     }
+}

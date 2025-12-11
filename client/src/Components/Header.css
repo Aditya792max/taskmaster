@@ -1,0 +1,151 @@
+/* Header.css — polished, responsive header */
+
+/* reset */
+* {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+          Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+/* sticky top navbar */
+header {
+     width: 100%;
+     background-color: black;
+     padding: 10px 0;
+     position: sticky;
+     top: 0;
+     z-index: 1000;
+     display: flex;
+     justify-content: flex-end;
+     /* moves everything to the right */
+}
+
+.header-content {
+     display: flex;
+     justify-content: flex-end;
+     /* ensures nav icons stay right */
+     align-items: center;
+     width: 100%;
+     gap: 20px;
+     margin-right: 20px;
+}
+
+.header-item a {
+     color: white;
+     font-size: 28px;
+     text-decoration: none;
+     transition: 0.3s ease;
+     padding: 0 10px;
+}
+
+.header-item a:hover {
+     color: rgb(255, 242, 3);
+     transform: translateY(-3px);
+}
+
+
+
+/* logo area (left) */
+.header-logo {
+     display: flex;
+     align-items: center;
+     gap: 12px;
+     color: #e6eef8;
+     text-decoration: none;
+     font-weight: 600;
+     font-size: 20px;
+     letter-spacing: 0.2px;
+}
+
+/* optional small logo circle */
+.header-logo .logo-mark {
+     width: 36px;
+     height: 36px;
+     border-radius: 8px;
+     display: inline-flex;
+     align-items: center;
+     justify-content: center;
+     color: rgb(255, 242, 3);
+     color: #031017;
+     font-weight: 700;
+     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+/* nav items (right) */
+.header-nav {
+     display: flex;
+     align-items: center;
+     gap: 18px;
+}
+
+/* each nav link wrapper */
+.header-item a {
+     display: inline-flex;
+     align-items: center;
+     justify-content: center;
+     color: #e6eef8;
+     font-size: 16px;
+     text-decoration: none;
+     padding: 8px 12px;
+     border-radius: 8px;
+     transition: transform 180ms ease, color 180ms ease, background-color 180ms ease;
+}
+
+/* subtle hover */
+.header-item a:hover {
+     color: #061014;
+     transform: translateY(-3px);
+     background-color: rgb(255, 242, 3);
+     /* matches your previous hover color but used as bg for contrast */
+     box-shadow: 0 6px 14px rgba(37, 194, 62, 0.12);
+}
+
+/* active/selected link */
+.header-item a.active {
+     background-color: rgba(196, 255, 61, 0.12);
+     color: #c4ff3d;
+     border: 1px solid rgba(196, 255, 61, 0.14);
+}
+
+/* tiny divider (optional) */
+.header-divider {
+     width: 1px;
+     height: 28px;
+     background: rgba(230, 238, 248, 0.06);
+     margin: 0 8px;
+}
+
+/* mobile: stack items or show compact nav */
+@media (max-width: 760px) {
+     header {
+          padding: 10px 12px;
+     }
+
+     .header-content {
+          max-width: 100%;
+          gap: 12px;
+     }
+
+     /* hide text labels if you later add icons; for now keep links but smaller */
+     .header-nav {
+          gap: 8px;
+     }
+
+     .header-item a {
+          font-size: 14px;
+          padding: 6px 10px;
+     }
+
+     /* make logo more compact */
+     .header-logo {
+          font-size: 16px;
+     }
+}
+
+/* utility: center page content below header */
+.site-content {
+     padding-top: 20px;
+     /* give space so content doesn't touch header */
+}

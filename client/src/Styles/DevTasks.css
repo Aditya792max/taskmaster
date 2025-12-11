@@ -1,0 +1,231 @@
+/* DevTasks.css - identical look to StudyTasks.css */
+
+:root {
+     --bg: #f7f9fb;
+     --card: #ffffff;
+     --muted: #6b7280;
+     --accent: #c4ff3d;
+     --accent-dark: #065f46;
+     --glass-shadow: 0 6px 18px rgba(7, 10, 22, 0.06);
+}
+
+.dev-container {
+     width: 100%;
+     background: var(--bg);
+}
+
+/* Main heading */
+.dev-main-heading {
+     max-width: 1150px;
+     margin: 18px auto;
+     padding: 0 16px;
+     font-size: 28px;
+     color: #065f46;
+}
+
+/* Two-column layout */
+.dev-layout {
+     max-width: 1150px;
+     margin: 12px auto 48px;
+     padding: 0 16px;
+     display: grid;
+     grid-template-columns: 360px 1fr;
+     gap: 20px;
+     align-items: start;
+}
+
+/* LEFT FORM CARD */
+.form-card {
+     background: var(--card);
+     padding: 18px;
+     border-radius: 12px;
+     box-shadow: var(--glass-shadow);
+     display: flex;
+     flex-direction: column;
+     gap: 12px;
+}
+
+/* Form styling */
+form label {
+     display: block;
+     font-size: 14px;
+     margin-bottom: 10px;
+}
+
+form label span {
+     display: block;
+     margin-bottom: 6px;
+     font-weight: 600;
+}
+
+form input[type="text"],
+form input[type="date"],
+form textarea,
+form select {
+     width: 100%;
+     padding: 10px;
+     border-radius: 8px;
+     border: 1px solid #e6edf3;
+     background: #fbfdff;
+     transition: box-shadow 0.2s ease;
+}
+
+form input:focus,
+form textarea:focus,
+form select:focus {
+     box-shadow: 0 6px 16px rgba(6, 17, 27, 0.06);
+}
+
+.form-row {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     gap: 12px;
+}
+
+form button {
+     background: #071028;
+     color: white;
+     border: none;
+     padding: 10px 12px;
+     border-radius: 8px;
+     margin-top: 10px;
+     font-weight: 600;
+     cursor: pointer;
+}
+
+.form-error {
+     color: #991b1b;
+     background: #fff1f2;
+     padding: 8px;
+     border-radius: 6px;
+}
+
+/* RIGHT SIDE */
+.dev-right {
+     display: flex;
+     flex-direction: column;
+     gap: 18px;
+}
+
+/* --- SECTION CARDS (MATCHING StudyTasks) --- */
+.tasks-section {
+     background: var(--card);
+     padding: 16px;
+     border-radius: 12px;
+     box-shadow: var(--glass-shadow);
+}
+
+.tasks-section h3 {
+     margin: 0 0 12px;
+     font-size: 18px;
+     color: #061014;
+}
+
+/* Messages */
+.loader,
+.empty,
+.error-box {
+     color: var(--muted);
+     padding: 12px;
+     border-radius: 10px;
+}
+
+/* GRID OF TASK CARDS */
+.tasks-grid {
+     display: grid;
+     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+     gap: 12px;
+}
+
+.task-card {
+     background: linear-gradient(180deg, #fff 0%, #fbfdff 100%);
+     padding: 12px;
+     border-radius: 10px;
+     border: 1px solid rgba(6, 17, 27, 0.04);
+     display: flex;
+     flex-direction: column;
+     gap: 8px;
+}
+
+.task-card.done {
+     opacity: 0.92;
+     filter: saturate(0.95);
+}
+
+/* Top row */
+.task-top {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+}
+
+.task-top h4 {
+     margin: 0;
+     font-size: 16px;
+     color: #071028;
+}
+
+/* Priority badge */
+.priority {
+     font-weight: 700;
+     padding: 6px 8px;
+     border-radius: 8px;
+     font-size: 12px;
+}
+
+.p1 {
+     background: #fee2e2;
+     color: #991b1b;
+}
+
+.p2 {
+     background: #fff7ed;
+     color: #92400e;
+}
+
+.p3 {
+     background: #ecfdf5;
+     color: #065f46;
+}
+
+/* Description */
+.task-card p {
+     margin: 0;
+     color: #475569;
+     font-size: 14px;
+}
+
+/* Deadline badge */
+.deadline {
+     font-size: 13px;
+     background: #eef2ff;
+     padding: 4px 8px;
+     border-radius: 6px;
+     width: fit-content;
+     color: #3730a3;
+}
+
+/* Mark as complete button */
+.btn-complete {
+     background: #065f46;
+     color: white;
+     padding: 8px 10px;
+     border: none;
+     border-radius: 8px;
+     cursor: pointer;
+     font-size: 14px;
+     font-weight: 600;
+     margin-top: 4px;
+}
+
+.btn-complete:hover {
+     box-shadow: 0 8px 16px rgba(6, 95, 70, 0.15);
+}
+
+/* Responsive */
+@media (max-width: 880px) {
+     .dev-layout {
+          grid-template-columns: 1fr;
+     }
+}
