@@ -113,6 +113,7 @@ function DevTasks() {
                                              type="text"
                                              value={title}
                                              onChange={(e) => setTitle(e.target.value)}
+                                             placeholder="e.g. Create CRUD APIs @ Backend..."
                                              required
                                         />
                                    </label>
@@ -122,6 +123,7 @@ function DevTasks() {
                                         <textarea
                                              value={description}
                                              onChange={(e) => setDescription(e.target.value)}
+                                             placeholder="Describe the task (what to code/debug)..."
                                              rows={5}
                                              required
                                         />

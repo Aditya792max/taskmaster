@@ -1,5 +1,6 @@
 import React from "react";
 import "../Styles/Home.css"; // import CSS
+import ScranbleText from "scramble-text-react";
 
 export default function Home() {
      return (
@@ -13,7 +14,11 @@ export default function Home() {
 
                {/* Text Overlay */}
                <div className="overlay-content">
-                    <h1>The Task Master!</h1>
+                    <h1>
+                         <ScranbleText text="The Task Master!" />
+                    </h1>
+
+
                     <p>
                          <br />
                          created by
